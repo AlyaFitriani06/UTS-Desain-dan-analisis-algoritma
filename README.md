@@ -2,6 +2,7 @@
 Analisis data dan prediksi kelulusan mahasiswa menggunakan machine learning
 
 Nama: Alya Fitriani 
+
 NIM: TI22250004
 
  => Tujuan dari analisis ini adalah:
@@ -37,8 +38,10 @@ Dari tahap ini diketahui bahwa dataset memiliki 87 baris dan 22 kolom dengan var
 a. Pemeriksaan Data Kosong
 Ditemukan 7 baris yang seluruh nilainya kosong dan 2 kolom yang seluruh datanya kosong. Setelah baris dan kolom tersebut dihapus, jumlah data menjadi 80 baris.
 Selain itu, ditemukan 2 nilai kosong pada kolom `# of Absence`. Nilai tersebut ditangani menggunakan median.
+
 b. Pemeriksaan Data Duplikat
 Ditemukan 6 baris data duplikat dalam dataset. Data tersebut diidentifikasi sebagai bagian dari pemeriksaan kualitas data.
+
 c. Pemeriksaan Nilai Nol
 Ditemukan 14 nilai nol pada beberapa kolom quintile, yaitu:
 1. Adult HE 2011 Quintile: 2 nilai.
@@ -47,12 +50,15 @@ Ditemukan 14 nilai nol pada beberapa kolom quintile, yaitu:
 4. Gaps GCSE Quintile: 4 nilai.
 5. Gaps GCSE Ethnicity Quintile: 4 nilai.
 Nilai tersebut diperiksa berdasarkan label dan tidak langsung dihapus karena masih dipertahankan sebagai bagian dari informasi dataset.
+
 d. Analisis Distribusi Data
 Berdasarkan histogram pada kolom `Percent Attended`, sebagian besar mahasiswa memiliki persentase kehadiran yang tinggi, yaitu sekitar 90–100%.
 Hasil boxplot menunjukkan bahwa persentase kehadiran berada pada rentang sekitar 0–100%, dengan median sekitar 84%. Tidak terlihat titik pencilan yang terpisah pada variabel tersebut.
+
 e. Perbandingan Keterlibatan Belajar
 Perbandingan dilakukan terhadap variabel `Percent Attended`, `Count of Module Area Logins`, dan `Total Hours in Module Area`.
 Hasil analisis menunjukkan bahwa mahasiswa yang lulus cenderung memiliki median persentase kehadiran lebih tinggi. Sementara itu, distribusi jumlah login dan total jam belajar antara mahasiswa lulus dan gagal terlihat relatif berdekatan.
+
 f. Analisis Korelasi
 => Beberapa hubungan korelasi yang ditemukan dalam dataset adalah:
 1. TUNDRA MSOA Quintile dan TUNDRA LSOA Quintile memiliki korelasi 1,00.
@@ -60,9 +66,11 @@ f. Analisis Korelasi
 3. POLAR3 Quintile dan Adult HE 2001 Quintile memiliki korelasi 0,90.
 4. Uni Connect Target Ward dan POLAR4 Quintile memiliki korelasi -0,57.
 Hasil ini menunjukkan adanya hubungan yang kuat pada beberapa variabel.
+
 g. Identifikasi Outlier
 Pemeriksaan outlier menggunakan metode IQR menemukan beberapa nilai pencilan pada variabel numerik, yaitu Age sebanyak 6, Distance to University sebanyak 7, Count of Module Area Logins sebanyak 2, Total Hours in Module Area sebanyak 3, % of Average Hours in Module Area sebanyak 4, # of Presence sebanyak 2, dan # of Absence sebanyak 2.
 Sementara itu, variabel Percent Attended tidak menunjukkan adanya outlier berdasarkan metode tersebut. Nilai pencilan yang ditemukan tidak langsung dihapus karena perlu mempertimbangkan karakteristik dan informasi pada dataset.
+
 h. Pemeriksaan Nilai Negatif
 Pemeriksaan dilakukan terhadap variabel numerik untuk mengetahui apakah terdapat nilai negatif. Hasilnya tidak ditemukan nilai negatif pada variabel yang diperiksa.
 
