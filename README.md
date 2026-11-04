@@ -3,15 +3,13 @@ Analisis data dan prediksi kelulusan mahasiswa menggunakan machine learning
 Nama: Alya Fitriani 
 NIM: TI22250004
 
- 1. Tujuan Analisis
-=> Tujuan dari analisis ini adalah:
+ => Tujuan dari analisis ini adalah:
 1. Memahami karakteristik dan struktur dataset mahasiswa.
 2. Mengidentifikasi data kosong, data duplikat, dan nilai yang tidak sesuai.
 3. Mengetahui distribusi setiap variabel dalam dataset.
 4. Menganalisis hubungan antarvariabel.
 5. Menyiapkan dataset agar dapat digunakan untuk analisis selanjutnya.
 
-2. Dataset
 Dataset yang digunakan dalam proyek ini adalah `original.csv`, yang terdiri dari 87 baris dan 22 kolom sebelum proses pembersihan data.
 => Dataset memiliki beberapa kelompok variabel, yaitu:
 1. Demografi: Gender dan Age.
@@ -23,10 +21,8 @@ a. `0` = Lulus (Pass).
 b. `1` = Gagal (Fail).
 Berdasarkan distribusi label, terdapat 68 mahasiswa lulus (85%) dan 12 mahasiswa gagal (15%).
 
-3. Data Understanding
-Tahap Data Understanding dilakukan untuk memahami struktur dan karakteristik dataset menggunakan Python, terutama library Pandas dan NumPy.
-
-=> Beberapa proses yang dilakukan meliputi:
+=> Tahap Data Understanding dilakukan untuk memahami struktur dan karakteristik dataset menggunakan Python, terutama library Pandas dan NumPy.
+# Beberapa proses yang dilakukan meliputi:
 1. Memuat dataset menggunakan `pd.read_csv()`.
 2. Menampilkan beberapa baris awal menggunakan `df.head()`.
 3. Mengetahui jumlah baris dan kolom menggunakan `df.shape`.
@@ -36,8 +32,7 @@ Tahap Data Understanding dilakukan untuk memahami struktur dan karakteristik dat
 7. Memeriksa jumlah data berdasarkan kategori kelulusan menggunakan `value_counts()`.
 Dari tahap ini diketahui bahwa dataset memiliki 87 baris dan 22 kolom dengan variabel yang menggambarkan karakteristik serta keterlibatan belajar mahasiswa.
 
- 4. Exploratory Data Analisis (EDA) dan Data Processing
-Tahap EDA dilakukan untuk memahami pola, distribusi, dan hubungan antarvariabel serta mengidentifikasi permasalahan dalam dataset.
+=> Tahap EDA dilakukan untuk memahami pola, distribusi, dan hubungan antarvariabel serta mengidentifikasi permasalahan dalam dataset.
 a. Pemeriksaan Data Kosong
 Ditemukan 7 baris yang seluruh nilainya kosong dan 2 kolom yang seluruh datanya kosong. Setelah baris dan kolom tersebut dihapus, jumlah data menjadi 80 baris.
 Selain itu, ditemukan 2 nilai kosong pada kolom `# of Absence`. Nilai tersebut ditangani menggunakan median.
@@ -70,15 +65,14 @@ Sementara itu, variabel Percent Attended tidak menunjukkan adanya outlier berdas
 h. Pemeriksaan Nilai Negatif
 Pemeriksaan dilakukan terhadap variabel numerik untuk mengetahui apakah terdapat nilai negatif. Hasilnya tidak ditemukan nilai negatif pada variabel yang diperiksa.
 
-5. Data Preparation
-Tahap Data Preparation dilakukan untuk mempersiapkan dataset sebelum digunakan pada proses analisis selanjutnya.
-=> Beberapa proses yang dilakukan adalah:
+=> Tahap Data Preparation dilakukan untuk mempersiapkan dataset sebelum digunakan pada proses analisis selanjutnya.
+# Beberapa proses yang dilakukan adalah:
 1. Menghapus 7 baris yang seluruh nilainya kosong.
 2. Menghapus 2 kolom yang seluruh datanya kosong.
 3. Menangani 2 nilai kosong pada kolom `# of Absence` menggunakan median.
 Menghapus kolom `TUNDRA LSOA Quintile` karena memiliki korelasi sempurna sebesar 1,00 dengan `TUNDRA MSOA Quintile`, sehingga kedua variabel memiliki informasi yang sama. Memisahkan variabel fitur (X) dan variabel target (y).Setelah proses tersebut, dataset memiliki 80 baris dengan 18 variabel fitur dan 1 variabel target.
 
-6. Kesimpulan
+=> Kesimpulan
 Berdasarkan hasil analisis, dataset awal memiliki 87 baris dan 22 kolom. Setelah dilakukan pemeriksaan dan pembersihan, jumlah data menjadi 80 baris karena terdapat 7 baris kosong dan 2 kolom kosong yang dihapus.
 Hasil EDA menunjukkan bahwa sebagian besar mahasiswa memiliki persentase kehadiran yang tinggi. Analisis juga menemukan beberapa hubungan korelasi yang kuat antarvariabel, nilai kosong, data duplikat, serta beberapa nilai pencilan.
 Nilai kosong pada kolom `# of Absence` ditangani menggunakan median. Sementara itu, nilai nol dan outlier diperiksa tanpa langsung dihapus agar informasi dalam dataset tetap dipertahankan.
